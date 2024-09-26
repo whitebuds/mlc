@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="logo/MLC LOGO MAIN.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLC Shopping Cart</title>
+    <link rel="stylesheet" href="checkoutform.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<main class="container">
+
+    <h1 class="heading">
+        <a href="shoppingcart.html" class="shopping-cart-link">
+            <img src="logo/MLC LOGO MAIN.png" alt="MLC Logo" class="logo"/>
+            <span>MLC Shopping Cart</span>
+        </a>
+    </h1>
+
+    <div class="item-flex">
+        <!-- Checkout section -->
+        <section class="checkout">
+            <h2 class="section-heading">Payment Details</h2>
+            <div class="payment-form">
+                <div class="payment-method">
+                    <button class="method selected">
+                        <ion-icon name="cash-outline"></ion-icon> 
+                        <span>Cash on Delivery (COD)</span>
+                        <ion-icon class="checkmark fill" name="checkmark-circle"></ion-icon>
+                    </button>
+                    
+                </div>
+        
+                <form id="orderForm">
+                    <div class="cardholder-name">
+                        <label for="cardholder-name" class="label-default">Email Address</label>    
+                        <input type="text" name="cardholder-name" id="cardholder-name" class="input-default" required>
+                    </div>
+        
+                    <div class="card-number">
+                        <label for="card-number" class="label-default">Delivery Address</label>
+                        <input type="text" name="card-number" id="card-number" class="input-default" required>
+                    </div>
+        
+                    <div class="contact-number">
+                        <label for="contact-number" class="label-default">Contact Number</label>
+                        <input type="tel" name="contact-number" id="contact-number" class="input-default" required>
+                    </div>
+                </form>
+            </div>
+        
+            <button class="btn btn-primary" id="payButton">
+                <b>Confirm Order</b> <span id="payAmount">0.00</span>
+            </button>
+        </section>
+        
+
+        <!-- Cart section -->
+        <section class="cart">
+            <div class="cart-item-box">
+                <h2 class="section-heading">Order Summary</h2>
+                
+                <div class="cart-items">
+                    <!-- Items will be dynamically added here -->
+                    <!-- Example cart item -->
+                    <div class="individual-cart-item">
+                        <div class="cart-item-image-container">
+                            <img src="path/to/image.jpg" alt="Item Image" class="cart-item-image">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">Item Title</div>
+                            <div class="cart-item-price">₱0.00</div>
+                            <div class="cart-item-quantity">
+                                <button class="decrease-quantity" data-index="0">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <span>1</span>
+                                <button class="increase-quantity" data-index="0">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Example cart item -->
+                </div>
+    
+            <div class="wrapper">
+                <div class="amount">
+                    <div class="tax">
+                        <span>Tax</span> <span><span id="tax">0.00</span></span>
+                    </div>
+
+                    <div class="shipping">
+                        <span>Shipping</span> <span> <span id="shipping">0.00</span></span>
+                    </div>
+
+                    <div class="total">
+                        <span>Total</span> <span><span id="total">0.00</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script src="main.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

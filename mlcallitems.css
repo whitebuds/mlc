@@ -1,0 +1,869 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap");
+
+:root {
+    --primary-color: #3C3D37;
+    --decent-color: #EEEDEB;
+    --accent-color: #fff;
+    --secondary-color: #3C3D37;
+    --font-family: 'Open Sans', sans-serif; 
+    --text-color: gray;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    font-family: var(--font-family); /* Ensures body text uses Lato */
+    background: var(--accent-color);
+    padding: 0 5%;
+}
+
+main {
+    margin-top: 2rem; /* Adjust this value as needed */
+}
+
+.header {
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--accent-color); /* Ensure the header background covers content behind it */
+}
+
+.header--menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo--container {
+    position: absolute; /* Position absolute to center within header */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the logo horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo--container img {
+    height: 80px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+
+.burger--icon i {
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.burger-sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden to the left */
+    background-color: var(--accent-color);
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .burger-sidebar.open {
+    left: 0; /* Slide into view */
+  }
+  
+  .burger-sidebar-close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .burger-sidebar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .burger-sidebar ul li {
+    margin-bottom: 15px; /* Add space between list items */
+  }
+  
+  .burger-sidebar ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit the text color */
+  }
+  
+
+.search--box {
+    background: var(--decent-color);
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.search--box i {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.search--box input {
+    background: transparent;
+    padding: 10px;
+    width: 80%;
+    border: none;
+    outline: none;
+}
+
+.menu--icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu--icons i {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--decent-color);
+}
+
+.menu--icons .user-icon i {
+    padding: 10px;
+    background: var(--decent-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu--icons .user-icon i:hover {
+    background: var(--primary-color);
+    color: var(--accent-color);
+}
+
+
+.fa-cart-shopping {
+    background: transparent !important;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon span {
+    background: var(--secondary-color);
+    color: var(--accent-color);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
+.section-heading {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 1rem 0 10px 0;
+    color: var(--text-color);
+    text-align: center; /* Center the section heading */
+}
+
+.menu--list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu--item {
+    width: 114px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid var(--decent-color);
+    padding: 10px 13px;
+    border-radius: 10px;
+    color: var(--text-color);
+}
+
+.menu--item img {
+    width: 100%;
+}
+
+.card--list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the cards within the container */
+    margin-bottom: 2rem;
+}
+
+.card {
+    width: 190px;
+    height: 250px; /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 1rem;
+    border-radius: 10px;
+    background: var(--accent-color);
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.card img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Limit the height of the image */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+}
+
+.card--price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.card--price .price {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.add-to-cart {
+    color: var(--primary-color);
+    border-radius: 50%;
+    padding: 6.5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    background-color: var(--accent-color);
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar-close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.individual-cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    border-radius: 5px;
+    color: var(--text-color);
+    border: 1px solid var(--decent-color);
+}
+
+.cart-item-title {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.sidebar--footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px; /* Adjust padding for better spacing */
+    border-radius: 15px;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns the content horizontally */
+    justify-content: center; /* Center-aligns the content vertically if needed */
+    text-align: center; /* Ensure text inside is centered */
+}
+
+.total--amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Adds some spacing between Total label and amount */
+}
+
+.total--amount h5 {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.cart-total {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.checkout-btn {
+    text-decoration: none;
+    background: var(--primary-color);
+    color: var(--accent-color);
+    padding: 10px 20px; /* Adjust padding for a more button-like appearance */
+    border-radius: 5px;
+    width: 100%; /* Makes the button fill the width of its container */
+    max-width: 250px; /* Adds a max-width to avoid the button being too wide */
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+.checkout-btn:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search--box {
+    background: var(--decent-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    width: 300px; /* Adjust width as needed */
+    max-width: 10%; /* Ensure it doesn't exceed the container width */
+    margin-left: auto; /* Move the search bar to the right */
+}
+
+.search--box input {
+    background: transparent;
+    padding: 10px;
+    width: calc(100% - 30px); /* Adjust based on padding and icon width */
+    border: none;
+    outline: none;
+}
+
+/* Styling for the section heading link button */
+.section-heading {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 1rem 0 10px 0;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.btn-link {
+    display: inline-block; /* Allows padding and margin */
+    background-color: var(--primary-color); /* Background color of the button */
+    color: var(--accent-color); /* Text color of the button */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: 600; /* Bold text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+}
+
+.btn-link:hover {
+    background-color: var(--secondary-color); /* Background color on hover */
+    color: var(--primary-color); /* Text color on hover */
+}
+
+.section-heading a {
+    text-decoration: none;
+}
+
+.section-heading a:hover {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+footer {
+    background-color: var(--accent-color); /* Change to desired background color */
+    color: var(--primary-color); /* Change to desired text color */
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+footer h5 {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+footer .input-group {
+    max-width: 400px; /* Adjusts the width of the input field */
+}
+
+footer .input-group .form-control {
+    border-right: none;
+    border-radius: 0;
+}
+
+footer .input-group .btn {
+    border-radius: 0;
+    background-color: var(--primary-color); /* Change to desired button color */
+    color: var(--accent-color);
+    border: none;
+}
+
+footer .input-group .btn:hover {
+    background-color: var(--secondary-color); /* Change to desired hover color */
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-left: 20px;
+}
+
+footer ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: var(--secondary-color);
+}
+
+footer .d-flex a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+footer .d-flex a:hover {
+    color: var(--secondary-color);
+}
+
+footer .d-flex a:not(:last-child) {
+    margin-right: 15px;
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+/* Centering within the column */
+.text-center {
+    text-align: center;
+}
+
+/* Ensuring icons are centered */
+.d-flex.justify-content-center {
+    justify-content: center !important;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.individual-cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cart-item-image {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 1rem;
+}
+
+.cart-items {
+    max-height: 480px; /* Adjust based on your design */
+    overflow-y: auto; /* Adds vertical scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+    padding-right: 10px; /* To prevent content from hiding behind the scrollbar */
+}
+
+.notification {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    z-index: 1000; /* Ensure it is above other elements */
+    transition: opacity 0.3s ease;
+}
+
+.notification.show {
+    display: block; /* Show the notification */
+    opacity: 1;
+}
+
+/* CSS for increase and decrease buttons */
+.cart-item-quantity button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.cart-item-quantity button:hover {
+    background-color: #ddd;
+}
+
+.cart-item-quantity i {
+    pointer-events: none;
+}
+
+.cart-item-quantity span {
+    margin: 0 10px;
+    font-size: 16px;
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .d-flex {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    footer ul {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    footer .text-end {
+        text-align: center !important;
+    }
+}
+
+.delete-all-btn {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%; /* Full width */
+    max-width: 250px; /* Max width */
+    text-align: center;
+}
+
+.delete-all-btn:hover {
+    background: darkred;
+}
+
+
+/* Media Queries for Tablets and Smaller Screens */
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 0 3%;
+    }
+
+    .header--menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        position: relative; /* Ensure positioning is relative for child elements */
+    }
+
+    .top-bar {
+        display: flex;
+        flex-direction: row; /* Align items horizontally */
+        align-items: center;
+        justify-content: space-between; /* Space between items */
+        width: 100%;
+        position: relative;
+        padding: 0 10px; /* Add padding to avoid items being too close to edges */
+    }
+
+    .burger-icon {
+        position: absolute; /* Positioning is now absolute */
+        top: 10px; /* Distance from the top */
+        left: 10px; /* Distance from the left */
+        /* Adjust positioning if needed */
+    }
+
+    .logo {
+        display: none; /* Hide the logo */
+    }
+
+    .bottom-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .search--box, .user-search--box {
+        width: 100%;
+        max-width: 80%; /* Ensure search box is not too wide */
+        margin: 0 auto;
+    }
+
+    .menu--icons i, .cart-icon i {
+        font-size: 16px; /* Reduce icon size for better fit */
+    }
+
+    .cart-icon span {
+        font-size: 10px; /* Notification bubble smaller */
+        width: 14px;
+        height: 14px;
+    }
+
+    .menu--list, .card--list {
+        display: flex;
+        flex-wrap: wrap; /* Wrap items to the next line */
+        gap: 15px; /* Space between items */
+        justify-content: space-between; /* Space items evenly */
+    }
+
+    .card {
+        width: calc(50% - 15px); /* Two columns with space between */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+}
+
+/* Media Queries for Mobile Screens */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 2%;
+    }
+
+    .header--menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: relative; /* Ensure positioning is relative for child elements */
+    }
+
+    .top-bar {
+        display: flex;
+        flex-direction: row; /* Align items horizontally */
+        align-items: center;
+        justify-content: space-between; /* Space between items */
+        width: 100%;
+        position: relative;
+        padding: 0 8px; /* Add padding to avoid items being too close to edges */
+    }
+
+    .burger-icon {
+        position: absolute; /* Positioning is now absolute */
+        top: 10px; /* Distance from the top */
+        left: 10px; /* Distance from the left */
+        /* Adjust positioning if needed */
+    }
+
+    .logo {
+        display: none; /* Hide the logo */
+    }
+
+    .bottom-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .search--box, .user-search--box {
+        width: 100%;
+        max-width: 90%; /* Adjust search box size for mobile */
+        margin: 0 auto;
+    }
+
+    .menu--icons i, .cart-icon i {
+        font-size: 14px; /* Further reduce icon size */
+        margin: 0 8px;   /* Adjust margin */
+    }
+
+    .cart-icon span {
+        font-size: 8px;  /* Notification bubble size */
+        width: 12px;
+        height: 12px;
+    }
+
+    .card--price .price {
+        font-size: 14px;
+    }
+
+    .checkout-btn, .delete-all-btn {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .cart-items {
+        max-height: 300px;
+    }
+
+    .menu--list, .card--list {
+        display: flex;
+        flex-wrap: wrap; /* Wrap items to the next line */
+        gap: 10px; /* Space between items */
+        justify-content: space-between; /* Space items evenly */
+    }
+
+    .card {
+        width: calc(50% - 10px); /* Two columns with space between */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+}
+
+/* Media Queries for Small Mobile Screens */
+@media screen and (max-width: 576px) {
+    .header--menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        position: relative; /* Ensure positioning is relative for child elements */
+    }
+
+    .top-bar {
+        display: flex;
+        flex-direction: row; /* Align items horizontally */
+        align-items: center;
+        justify-content: space-between; /* Space between items */
+        width: 100%;
+        position: relative;
+        padding: 0 5px; /* Add padding to avoid items being too close to edges */
+    }
+
+    .burger-icon {
+        position: absolute; /* Positioning is now absolute */
+        top: 10px; /* Distance from the top */
+        left: 10px; /* Distance from the left */
+        /* Adjust positioning if needed */
+    }
+
+    .logo {
+        display: none; /* Hide the logo */
+    }
+
+    .bottom-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .search--box, .user-search--box {
+        width: 100%;
+        max-width: 85%; /* Adjust search box size for smaller screens */
+        margin: 0 auto;
+    }
+
+    .menu--icons i, .cart-icon i {
+        font-size: 12px; /* Smallest icon size for mobile */
+        margin: 0 5px;   /* Tighter spacing */
+    }
+
+    .cart-icon span {
+        font-size: 7px;  /* Adjust notification bubble size */
+        width: 10px;
+        height: 10px;
+    }
+
+    .menu--item, .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .card--price .price {
+        font-size: 12px;
+    }
+
+    .checkout-btn, .delete-all-btn {
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .cart-items {
+        max-height: 200px;
+    }
+
+    .menu--list, .card--list {
+        display: flex;
+        flex-wrap: wrap; /* Wrap items to the next line */
+        gap: 5px; /* Space between items */
+        justify-content: space-between; /* Space items evenly */
+    }
+
+    .card {
+        width: calc(50% - 5px); /* Two columns with space between */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+}
